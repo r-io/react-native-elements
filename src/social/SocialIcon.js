@@ -69,6 +69,7 @@ const SocialIcon = props => {
     small,
     style,
     title,
+    titleProps,
     type,
     underlayColor,
     ...attributes
@@ -114,6 +115,7 @@ const SocialIcon = props => {
               fontWeight && { fontWeight },
               fontStyle && fontStyle,
             ])}
+            {...titleProps}
           >
             {title}
           </Text>

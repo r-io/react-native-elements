@@ -1702,6 +1702,11 @@ export interface SocialIconProps {
   title?: string;
 
   /**
+   * Optional props for the title inside the social icon button
+   */
+  titleProps?: TextProperties;
+
+  /**
    * Social media type
    */
   type: SocialMediaType;
