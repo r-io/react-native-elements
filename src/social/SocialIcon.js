@@ -22,6 +22,7 @@ const colors = {
   'reddit-alien': '#fc461e',
   'stack-overflow': '#f27f33',
   angellist: '#1c4082',
+  apple: '#000000',
   codepen: '#000000',
   envelope: '#000000',
   etsy: '#f2581e',
