@@ -1693,7 +1693,8 @@ export type SocialMediaType =
   | 'angellist'
   | 'codepen'
   | 'weibo'
-  | 'vk';
+  | 'vk'
+  | 'apple';
 
 export interface SocialIconProps {
   /**
