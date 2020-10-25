@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Color from 'color';
 
-import { withTheme, ViewPropTypes } from '../config';
+import { withTheme } from '../config';
 import { renderNode, nodeType, conditionalStyle, color } from '../helpers';
 import Icon from '../icons/Icon';
 
@@ -66,6 +66,16 @@ class Button extends Component {
       ...attributes
     } = this.props;
 
+    // Refactor to Pressable
+    const TouchableComponentInternal =
+      TouchableComponent ||
+      Platform.select({
+        android: linearGradientProps
+          ? TouchableOpacity
+          : TouchableNativeFeedback,
+        default: TouchableOpacity,
+      });
+
     const titleStyle = StyleSheet.flatten([
       styles.title(type, theme),
       passedTitleStyle,
@@ -76,11 +86,8 @@ class Button extends Component {
     const background =
       Platform.OS === 'android' && Platform.Version >= 21
         ? TouchableNativeFeedback.Ripple(
-            Color(titleStyle.color)
-              .alpha(0.32)
-              .rgb()
-              .string(),
-            false
+            Color(titleStyle.color).alpha(0.32).rgb().string(),
+            true
           )
         : undefined;
 
@@ -89,10 +96,10 @@ class Button extends Component {
       ...passedLoadingProps,
     };
 
-    const accessibilityStates = [
-      ...(disabled ? ['disabled'] : []),
-      ...(loading ? ['busy'] : []),
-    ];
+    const accessibilityState = {
+      disabled: !!disabled,
+      busy: !!loading,
+    };
 
     return (
       <View
@@ -106,12 +113,12 @@ class Button extends Component {
           raised && !disabled && styles.raised(type),
         ])}
       >
-        <TouchableComponent
+        <TouchableComponentInternal
           onPress={this.handleOnPress}
           delayPressIn={0}
           activeOpacity={0.3}
           accessibilityRole="button"
-          accessibilityStates={accessibilityStates}
+          accessibilityState={accessibilityState}
           disabled={disabled}
           background={background}
           {...attributes}
@@ -160,7 +167,7 @@ class Button extends Component {
                 ]),
               })}
           </ViewComponent>
-        </TouchableComponent>
+        </TouchableComponentInternal>
       </View>
     );
   }
@@ -168,24 +175,24 @@ class Button extends Component {
 
 Button.propTypes = {
   title: PropTypes.string,
-  titleStyle: Text.propTypes.style,
+  titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   titleProps: PropTypes.object,
-  buttonStyle: ViewPropTypes.style,
+  buttonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   type: PropTypes.oneOf(['solid', 'clear', 'outline']),
   loading: PropTypes.bool,
-  loadingStyle: ViewPropTypes.style,
+  loadingStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   loadingProps: PropTypes.object,
   onPress: PropTypes.func,
-  containerStyle: ViewPropTypes.style,
+  containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   icon: nodeType,
-  iconContainerStyle: ViewPropTypes.style,
+  iconContainerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   iconRight: PropTypes.bool,
   linearGradientProps: PropTypes.object,
   TouchableComponent: PropTypes.elementType,
   ViewComponent: PropTypes.elementType,
   disabled: PropTypes.bool,
-  disabledStyle: ViewPropTypes.style,
-  disabledTitleStyle: Text.propTypes.style,
+  disabledStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  disabledTitleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   raised: PropTypes.bool,
   theme: PropTypes.object,
 };
@@ -193,10 +200,6 @@ Button.propTypes = {
 Button.defaultProps = {
   title: '',
   iconRight: false,
-  TouchableComponent: Platform.select({
-    android: TouchableNativeFeedback,
-    default: TouchableOpacity,
-  }),
   onPress: () => console.log('Please attach a method to this component'),
   type: 'solid',
   buttonStyle: {
@@ -227,18 +230,17 @@ const styles = {
       backgroundColor: theme.colors.disabled,
     }),
     ...conditionalStyle(type === 'outline', {
-      borderColor: color(theme.colors.disabled).darken(0.3),
+      borderColor: color(theme.colors.disabled).darken(0.3).string(),
     }),
   }),
-  disabledTitle: theme => ({
-    color: color(theme.colors.disabled).darken(0.3),
+  disabledTitle: (theme) => ({
+    color: color(theme.colors.disabled).darken(0.3).string(),
   }),
   title: (type, theme) => ({
     color: type === 'solid' ? 'white' : theme.colors.primary,
     fontSize: 16,
     textAlign: 'center',
-    paddingTop: 2,
-    paddingBottom: 1,
+    paddingVertical: 1,
     ...Platform.select({
       android: {
         fontFamily: 'sans-serif-medium',
@@ -251,9 +253,10 @@ const styles = {
   iconContainer: {
     marginHorizontal: 5,
   },
-  raised: type =>
+  raised: (type) =>
     type !== 'clear' && {
       backgroundColor: '#fff',
+      overflow: 'visible',
       ...Platform.select({
         android: {
           elevation: 4,

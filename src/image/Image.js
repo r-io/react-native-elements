@@ -5,44 +5,42 @@ import {
   Image as ImageNative,
   StyleSheet,
   View,
-  Platform,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableNativeFeedback,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import { nodeType } from '../helpers';
-import { ViewPropTypes, withTheme } from '../config';
+import { withTheme } from '../config';
 
 class Image extends React.Component {
   state = {
     placeholderOpacity: new Animated.Value(1),
   };
 
-  onLoad = () => {
-    const { transition, onLoad } = this.props;
+  onLoad = (e) => {
+    const { transition, onLoad, transitionDuration } = this.props;
 
     if (!transition) {
       this.state.placeholderOpacity.setValue(0);
       return;
     }
 
-    const minimumWait = 100;
-    const staggerNonce = 200 * Math.random();
+    Animated.timing(this.state.placeholderOpacity, {
+      toValue: 0,
+      duration: transitionDuration,
+      useNativeDriver: true,
+    }).start();
 
-    setTimeout(
-      () => {
-        Animated.timing(this.state.placeholderOpacity, {
-          toValue: 0,
-          duration: 350,
-          useNativeDriver: Platform.OS === 'android' ? false : true,
-        }).start();
-      },
-      Platform.OS === 'android' ? 0 : Math.floor(minimumWait + staggerNonce)
-    );
-
-    onLoad && onLoad();
+    onLoad && onLoad(e);
   };
 
   render() {
     const {
+      onPress,
+      onLongPress,
+      Component = onPress || onLongPress ? TouchableOpacity : View,
       placeholderStyle,
       PlaceholderContent,
       containerStyle,
@@ -51,10 +49,15 @@ class Image extends React.Component {
       children,
       ...attributes
     } = this.props;
-    const hasImage = Boolean(attributes.source);
+
+    const hasImage =
+      Boolean(attributes.source) && Boolean(attributes.source.uri);
+    const { width, height, ...styleProps } = StyleSheet.flatten(style);
 
     return (
-      <View
+      <Component
+        onPress={onPress}
+        onLongPress={onLongPress}
         accessibilityIgnoresInvertColors={true}
         style={StyleSheet.flatten([styles.container, containerStyle])}
       >
@@ -62,13 +65,14 @@ class Image extends React.Component {
           testID="RNE__Image"
           {...attributes}
           onLoad={this.onLoad}
-          style={[
+          style={StyleSheet.flatten([
             StyleSheet.absoluteFill,
             {
-              width: style.width,
-              height: style.height,
+              width: width,
+              height: height,
             },
-          ]}
+            styleProps,
+          ])}
         />
 
         <Animated.View
@@ -95,7 +99,7 @@ class Image extends React.Component {
         </Animated.View>
 
         <View style={style}>{children}</View>
-      </View>
+      </Component>
     );
   }
 }
@@ -118,18 +122,36 @@ const styles = {
 
 Image.propTypes = {
   ...ImageNative.propTypes,
+  Component: PropTypes.oneOf([
+    View,
+    TouchableOpacity,
+    TouchableHighlight,
+    TouchableNativeFeedback,
+    TouchableWithoutFeedback,
+  ]),
+  onPress: PropTypes.func,
+  onLongPress: PropTypes.func,
   ImageComponent: PropTypes.elementType,
   PlaceholderContent: nodeType,
-  containerStyle: ViewPropTypes.style,
-  placeholderStyle: ImageNative.propTypes.style,
+  containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  placeholderStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   transition: PropTypes.bool,
+  transitionDuration: PropTypes.number,
 };
 
 Image.defaultProps = {
   ImageComponent: ImageNative,
   style: {},
   transition: true,
+  transitionDuration: 360,
 };
+
+Image.getSize = ImageNative.getSize;
+Image.getSizeWithHeaders = ImageNative.getSizeWithHeaders;
+Image.prefetch = ImageNative.prefetch;
+Image.abortPrefetch = ImageNative.abortPrefetch;
+Image.queryCache = ImageNative.queryCache;
+Image.resolveAssetSource = ImageNative.resolveAssetSource;
 
 export { Image };
 export default withTheme(Image, 'Image');

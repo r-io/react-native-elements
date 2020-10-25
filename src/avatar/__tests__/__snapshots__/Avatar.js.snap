@@ -1,145 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Avatar Component Edit button android 1`] = `
-<View
-  style={
-    Object {
-      "backgroundColor": "transparent",
-      "height": 34,
-      "width": 34,
-    }
-  }
->
-  <ForwardRef(Themed.Image)
-    ImageComponent={[Function]}
-    containerStyle={
-      Object {
-        "flex": 1,
-      }
-    }
-    placeholderStyle={Object {}}
-    source={
-      Object {
-        "uri": "https://i.imgur.com/0y8Ftya.jpg",
-      }
-    }
-    style={
-      Object {
-        "flex": 1,
-        "height": null,
-        "width": null,
-      }
-    }
-  />
-  <TouchableHighlight
-    activeOpacity={0.85}
-    delayPressOut={100}
-    onPress={null}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#aaa",
-        "borderRadius": 5.666666666666667,
-        "bottom": 0,
-        "height": 11.333333333333334,
-        "justifyContent": "center",
-        "position": "absolute",
-        "right": 0,
-        "shadowColor": "#000",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 1,
-        },
-        "shadowOpacity": 0.5,
-        "shadowRadius": 2,
-        "width": 11.333333333333334,
-      }
-    }
-    underlayColor="#000"
-  >
-    <View>
-      <Themed.Icon
-        color="#fff"
-        name="mode-edit"
-        size={9.066666666666668}
-        type="material"
-        underlayColor="#000"
-      />
-    </View>
-  </TouchableHighlight>
-</View>
-`;
-
-exports[`Avatar Component Edit button ios 1`] = `
-<View
-  style={
-    Object {
-      "backgroundColor": "transparent",
-      "height": 34,
-      "width": 34,
-    }
-  }
->
-  <ForwardRef(Themed.Image)
-    ImageComponent={[Function]}
-    containerStyle={
-      Object {
-        "flex": 1,
-      }
-    }
-    placeholderStyle={Object {}}
-    source={
-      Object {
-        "uri": "https://i.imgur.com/0y8Ftya.jpg",
-      }
-    }
-    style={
-      Object {
-        "flex": 1,
-        "height": null,
-        "width": null,
-      }
-    }
-  />
-  <TouchableHighlight
-    activeOpacity={0.85}
-    delayPressOut={100}
-    onPress={null}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#aaa",
-        "borderRadius": 5.666666666666667,
-        "bottom": 0,
-        "height": 11.333333333333334,
-        "justifyContent": "center",
-        "position": "absolute",
-        "right": 0,
-        "shadowColor": "#000",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 1,
-        },
-        "shadowOpacity": 0.5,
-        "shadowRadius": 2,
-        "width": 11.333333333333334,
-      }
-    }
-    underlayColor="#000"
-  >
-    <View>
-      <Themed.Icon
-        color="#fff"
-        name="mode-edit"
-        size={9.066666666666668}
-        type="material"
-        underlayColor="#000"
-      />
-    </View>
-  </TouchableHighlight>
-</View>
-`;
-
 exports[`Avatar Component Placeholders renders using icon prop 1`] = `
 <View
   style={
@@ -533,6 +393,7 @@ exports[`Avatar Component renders rounded 1`] = `
 >
   <ForwardRef(Themed.Image)
     ImageComponent={[Function]}
+    borderRadius={17}
     containerStyle={
       Object {
         "borderRadius": 17,
@@ -558,8 +419,7 @@ exports[`Avatar Component renders rounded 1`] = `
 `;
 
 exports[`Avatar Component renders touchable if onPress given 1`] = `
-<TouchableOpacity
-  activeOpacity={0.2}
+<ForwardRef
   onPress={[Function]}
   style={
     Object {
@@ -590,7 +450,7 @@ exports[`Avatar Component renders touchable if onPress given 1`] = `
       }
     }
   />
-</TouchableOpacity>
+</ForwardRef>
 `;
 
 exports[`Avatar Component should apply values from theme 1`] = `
@@ -611,6 +471,7 @@ exports[`Avatar Component should apply values from theme 1`] = `
         },
       },
       "colors": Object {
+        "black": "#242424",
         "disabled": "hsl(208, 8%, 90%)",
         "divider": "#bcbbc1",
         "error": "#ff190c",
@@ -624,6 +485,7 @@ exports[`Avatar Component should apply values from theme 1`] = `
         "platform": Object {
           "android": Object {
             "error": "#f44336",
+            "grey": "rgba(0, 0, 0, 0.54)",
             "primary": "#2196f3",
             "secondary": "#9C27B0",
             "success": "#4caf50",
@@ -631,17 +493,29 @@ exports[`Avatar Component should apply values from theme 1`] = `
           },
           "ios": Object {
             "error": "#ff3b30",
+            "grey": "#7d7d7d",
             "primary": "#007aff",
+            "searchBg": "#dcdce1",
             "secondary": "#5856d6",
             "success": "#4cd964",
             "warning": "#ffcc00",
           },
+          "web": Object {
+            "error": "#ff190c",
+            "grey": "#393e42",
+            "primary": "#2089dc",
+            "searchBg": "#303337",
+            "secondary": "#ca71eb",
+            "success": "#52c41a",
+            "warning": "#faad14",
+          },
         },
         "primary": "#2089dc",
         "searchBg": "#303337",
-        "secondary": "#8F0CE8",
+        "secondary": "#ca71eb",
         "success": "#52c41a",
         "warning": "#faad14",
+        "white": "#ffffff",
       },
     }
   }
@@ -667,19 +541,16 @@ exports[`Avatar Component should apply values from theme 1`] = `
         }
       }
       style={
-        Array [
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "height": null,
-            "width": null,
-          },
-        ]
+        Object {
+          "bottom": 0,
+          "flex": 1,
+          "height": null,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": null,
+        }
       }
       testID="RNE__Image"
       theme={
@@ -690,6 +561,7 @@ exports[`Avatar Component should apply values from theme 1`] = `
             },
           },
           "colors": Object {
+            "black": "#242424",
             "disabled": "hsl(208, 8%, 90%)",
             "divider": "#bcbbc1",
             "error": "#ff190c",
@@ -703,6 +575,7 @@ exports[`Avatar Component should apply values from theme 1`] = `
             "platform": Object {
               "android": Object {
                 "error": "#f44336",
+                "grey": "rgba(0, 0, 0, 0.54)",
                 "primary": "#2196f3",
                 "secondary": "#9C27B0",
                 "success": "#4caf50",
@@ -710,21 +583,34 @@ exports[`Avatar Component should apply values from theme 1`] = `
               },
               "ios": Object {
                 "error": "#ff3b30",
+                "grey": "#7d7d7d",
                 "primary": "#007aff",
+                "searchBg": "#dcdce1",
                 "secondary": "#5856d6",
                 "success": "#4cd964",
                 "warning": "#ffcc00",
               },
+              "web": Object {
+                "error": "#ff190c",
+                "grey": "#393e42",
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+              },
             },
             "primary": "#2089dc",
             "searchBg": "#303337",
-            "secondary": "#8F0CE8",
+            "secondary": "#ca71eb",
             "success": "#52c41a",
             "warning": "#faad14",
+            "white": "#ffffff",
           },
         }
       }
       transition={true}
+      transitionDuration={360}
       updateTheme={[Function]}
     />
     <View

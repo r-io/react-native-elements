@@ -9,9 +9,14 @@ exports[`Button Component Button Types Clear should display clear button 1`] = `
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={Array []}
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": false,
+      }
+    }
     activeOpacity={0.3}
     delayPressIn={0}
     disabled={false}
@@ -35,9 +40,8 @@ exports[`Button Component Button Types Clear should display clear button 1`] = `
         style={
           Object {
             "color": "#2089dc",
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -45,7 +49,7 @@ exports[`Button Component Button Types Clear should display clear button 1`] = `
         Clear
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -58,12 +62,13 @@ exports[`Button Component Button Types Clear should display clear button disable
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={
-      Array [
-        "disabled",
-      ]
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": true,
+      }
     }
     activeOpacity={0.3}
     delayPressIn={0}
@@ -87,18 +92,9 @@ exports[`Button Component Button Types Clear should display clear button disable
       <Text
         style={
           Object {
-            "color": Object {
-              "color": Array [
-                208,
-                8,
-                63,
-              ],
-              "model": "hsl",
-              "valpha": 1,
-            },
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "color": "hsl(208, 8%, 63%)",
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -106,7 +102,7 @@ exports[`Button Component Button Types Clear should display clear button disable
         Clear
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -119,9 +115,14 @@ exports[`Button Component Button Types Clear should display raised clear button 
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={Array []}
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": false,
+      }
+    }
     activeOpacity={0.3}
     delayPressIn={0}
     disabled={false}
@@ -145,9 +146,8 @@ exports[`Button Component Button Types Clear should display raised clear button 
         style={
           Object {
             "color": "#2089dc",
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -155,7 +155,7 @@ exports[`Button Component Button Types Clear should display raised clear button 
         Clear
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -168,9 +168,14 @@ exports[`Button Component Button Types Outline should display outline button 1`]
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={Array []}
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": false,
+      }
+    }
     activeOpacity={0.3}
     delayPressIn={0}
     disabled={false}
@@ -194,9 +199,8 @@ exports[`Button Component Button Types Outline should display outline button 1`]
         style={
           Object {
             "color": "#2089dc",
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -204,7 +208,7 @@ exports[`Button Component Button Types Outline should display outline button 1`]
         Outline
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -217,12 +221,13 @@ exports[`Button Component Button Types Outline should display outline button dis
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={
-      Array [
-        "disabled",
-      ]
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": true,
+      }
     }
     activeOpacity={0.3}
     delayPressIn={0}
@@ -234,15 +239,7 @@ exports[`Button Component Button Types Outline should display outline button dis
         Object {
           "alignItems": "center",
           "backgroundColor": "transparent",
-          "borderColor": Object {
-            "color": Array [
-              208,
-              8,
-              63,
-            ],
-            "model": "hsl",
-            "valpha": 1,
-          },
+          "borderColor": "hsl(208, 8%, 63%)",
           "borderRadius": 3,
           "borderWidth": 0.5,
           "flexDirection": "row",
@@ -254,18 +251,9 @@ exports[`Button Component Button Types Outline should display outline button dis
       <Text
         style={
           Object {
-            "color": Object {
-              "color": Array [
-                208,
-                8,
-                63,
-              ],
-              "model": "hsl",
-              "valpha": 1,
-            },
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "color": "hsl(208, 8%, 63%)",
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -273,7 +261,7 @@ exports[`Button Component Button Types Outline should display outline button dis
         Outline
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -283,13 +271,25 @@ exports[`Button Component Button Types Outline should display raised outline but
     Object {
       "backgroundColor": "#fff",
       "borderRadius": 3,
-      "overflow": "hidden",
+      "overflow": "visible",
+      "shadowColor": "rgba(0,0,0, .4)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 1,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 1,
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={Array []}
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": false,
+      }
+    }
     activeOpacity={0.3}
     delayPressIn={0}
     disabled={false}
@@ -313,9 +313,8 @@ exports[`Button Component Button Types Outline should display raised outline but
         style={
           Object {
             "color": "#2089dc",
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -323,7 +322,7 @@ exports[`Button Component Button Types Outline should display raised outline but
         Outline
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -333,13 +332,25 @@ exports[`Button Component Button Types Solid should display raised solid button 
     Object {
       "backgroundColor": "#fff",
       "borderRadius": 3,
-      "overflow": "hidden",
+      "overflow": "visible",
+      "shadowColor": "rgba(0,0,0, .4)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 1,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 1,
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={Array []}
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": false,
+      }
+    }
     activeOpacity={0.3}
     delayPressIn={0}
     disabled={false}
@@ -363,9 +374,8 @@ exports[`Button Component Button Types Solid should display raised solid button 
         style={
           Object {
             "color": "white",
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -373,7 +383,7 @@ exports[`Button Component Button Types Solid should display raised solid button 
         Solid
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -386,9 +396,14 @@ exports[`Button Component Button Types Solid should display solid button 1`] = `
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={Array []}
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": false,
+      }
+    }
     activeOpacity={0.3}
     delayPressIn={0}
     disabled={false}
@@ -412,9 +427,8 @@ exports[`Button Component Button Types Solid should display solid button 1`] = `
         style={
           Object {
             "color": "white",
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -422,7 +436,7 @@ exports[`Button Component Button Types Solid should display solid button 1`] = `
         Solid
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -435,12 +449,13 @@ exports[`Button Component Button Types Solid should display solid button disable
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={
-      Array [
-        "disabled",
-      ]
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": true,
+      }
     }
     activeOpacity={0.3}
     delayPressIn={0}
@@ -464,18 +479,9 @@ exports[`Button Component Button Types Solid should display solid button disable
       <Text
         style={
           Object {
-            "color": Object {
-              "color": Array [
-                208,
-                8,
-                63,
-              ],
-              "model": "hsl",
-              "valpha": 1,
-            },
-            "fontSize": 16,
-            "paddingBottom": 1,
-            "paddingTop": 2,
+            "color": "hsl(208, 8%, 63%)",
+            "fontSize": 18,
+            "paddingVertical": 1,
             "textAlign": "center",
           }
         }
@@ -483,7 +489,7 @@ exports[`Button Component Button Types Solid should display solid button disable
         Solid
       </Text>
     </View>
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;
 
@@ -498,13 +504,15 @@ exports[`Button Component should apply values from theme 1`] = `
 >
   <View
     accessibilityRole="button"
-    accessibilityStates={
-      Array [
-        "busy",
-      ]
+    accessibilityState={
+      Object {
+        "busy": true,
+        "disabled": false,
+      }
     }
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -513,14 +521,7 @@ exports[`Button Component should apply values from theme 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": Object {
-          "_animation": null,
-          "_children": Array [],
-          "_listeners": Object {},
-          "_offset": 0,
-          "_startingValue": 1,
-          "_value": 1,
-        },
+        "opacity": 1,
       }
     }
   >
@@ -563,9 +564,14 @@ exports[`Button Component should render without issues 1`] = `
     }
   }
 >
-  <TouchableOpacity
+  <ForwardRef
     accessibilityRole="button"
-    accessibilityStates={Array []}
+    accessibilityState={
+      Object {
+        "busy": false,
+        "disabled": false,
+      }
+    }
     activeOpacity={0.3}
     delayPressIn={0}
     disabled={false}
@@ -585,6 +591,6 @@ exports[`Button Component should render without issues 1`] = `
         }
       }
     />
-  </TouchableOpacity>
+  </ForwardRef>
 </View>
 `;

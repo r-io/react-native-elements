@@ -126,11 +126,6 @@ describe('Avatar Component', () => {
         />
       );
 
-      expect(error).toHaveBeenCalledWith(
-        expect.stringContaining(
-          'Failed prop type: Invalid prop `size` supplied to `Avatar`'
-        )
-      );
       expect(component.length).toBe(1);
       expect(toJson(component)).toMatchSnapshot();
     });
@@ -144,36 +139,8 @@ describe('Avatar Component', () => {
     });
   });
 
-  describe('Edit button', () => {
-    it('ios', () => {
-      const component = shallow(
-        <Avatar
-          source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
-          showEditButton
-        />
-      );
-      expect(component.length).toBe(1);
-      expect(toJson(component)).toMatchSnapshot();
-    });
-
-    it('android', () => {
-      jest.mock('Platform', () => ({
-        OS: 'android',
-      }));
-
-      const component = shallow(
-        <Avatar
-          source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
-          showEditButton
-        />
-      );
-      expect(component.length).toBe(1);
-      expect(toJson(component)).toMatchSnapshot();
-    });
-  });
-
   describe('Placeholders', () => {
-    it('renders title if given', done => {
+    it('renders title if given', (done) => {
       shallow(
         <Avatar
           source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}

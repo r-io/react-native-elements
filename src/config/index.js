@@ -1,21 +1,17 @@
-import { Text } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import BackgroundImage from './BackgroundImage';
 import colors from './colors';
-import ViewPropTypes from './ViewPropTypes';
+import colorsDark from './colorsDark';
 import fonts from './fonts';
 import ThemeProvider, { ThemeConsumer, ThemeContext } from './ThemeProvider';
 import withTheme from './withTheme';
 
-const TextPropTypes = Text.propTypes;
-
 export {
   BackgroundImage,
   colors,
+  colorsDark,
   getStatusBarHeight,
-  ViewPropTypes,
-  TextPropTypes,
   fonts,
   ThemeProvider,
   ThemeConsumer,

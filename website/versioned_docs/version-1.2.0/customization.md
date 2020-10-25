@@ -1,7 +1,6 @@
 ---
-id: version-1.2.0-customization
+id: customization
 title: Customization
-original_id: customization
 ---
 
 Congrats! You've installed React Native Elements and your immediate question
@@ -41,7 +40,7 @@ instead of the built-in component.
 import React from 'react';
 import { Button } from 'react-native-elements';
 
-const RaisedButton = props => <Button raised {...props} />;
+const RaisedButton = (props) => <Button raised {...props} />;
 
 // Your App
 const App = () => {

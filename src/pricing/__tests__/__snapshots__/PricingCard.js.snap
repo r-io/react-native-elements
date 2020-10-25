@@ -1,11 +1,194 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PricingButton component icon is component 1`] = `
+<ForwardRef(Themed.Button)
+  buttonStyle={
+    Object {
+      "backgroundColor": undefined,
+      "marginBottom": 10,
+      "marginTop": 15,
+    }
+  }
+  icon={
+    <Themed.Icon
+      color="red"
+      name="flight-takeoff"
+      size={30}
+    />
+  }
+  title="GET STARTED"
+/>
+`;
+
+exports[`PricingButton component icon is object 1`] = `
+<ForwardRef(Themed.Button)
+  buttonStyle={
+    Object {
+      "backgroundColor": undefined,
+      "marginBottom": 10,
+      "marginTop": 15,
+    }
+  }
+  disabled={true}
+  icon={
+    <Themed.Icon
+      color="red"
+      name="flight-takeoff"
+      size={30}
+    />
+  }
+  title="GET STARTED"
+/>
+`;
+
+exports[`PricingButton component icon is string 1`] = `
+<ForwardRef(Themed.Button)
+  buttonStyle={
+    Object {
+      "backgroundColor": undefined,
+      "marginBottom": 10,
+      "marginTop": 15,
+    }
+  }
+  icon={
+    <Themed.Icon
+      color="white"
+      name="flight-takeoff"
+      size={15}
+    />
+  }
+  title="GET STARTED"
+/>
+`;
+
+exports[`PricingCard component button with custom component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderColor": "#e1e8ee",
+      "borderWidth": 1,
+      "margin": 15,
+      "marginBottom": 15,
+      "padding": 15,
+      "shadowColor": "rgba(0,0,0, .2)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.5,
+      "shadowRadius": 0.5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+      }
+    }
+  >
+    <Themed.Text
+      style={
+        Object {
+          "color": "#2089dc",
+          "fontSize": 38.57142857142857,
+          "fontWeight": "800",
+          "textAlign": "center",
+        }
+      }
+      testID="pricingCardTitle"
+    />
+    <Themed.Text
+      style={
+        Object {
+          "fontSize": 51.42857142857143,
+          "fontWeight": "700",
+          "marginBottom": 10,
+          "marginTop": 10,
+          "textAlign": "center",
+        }
+      }
+    />
+    <ForwardRef(Themed.Button)
+      disabled={true}
+      title="GET STARTED"
+    />
+  </View>
+</View>
+`;
+
+exports[`PricingCard component button with extended props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderColor": "#e1e8ee",
+      "borderWidth": 1,
+      "margin": 15,
+      "marginBottom": 15,
+      "padding": 15,
+      "shadowColor": "rgba(0,0,0, .2)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.5,
+      "shadowRadius": 0.5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+      }
+    }
+  >
+    <Themed.Text
+      style={
+        Object {
+          "color": "#2089dc",
+          "fontSize": 38.57142857142857,
+          "fontWeight": "800",
+          "textAlign": "center",
+        }
+      }
+      testID="pricingCardTitle"
+    />
+    <Themed.Text
+      style={
+        Object {
+          "fontSize": 51.42857142857143,
+          "fontWeight": "700",
+          "marginBottom": 10,
+          "marginTop": 10,
+          "textAlign": "center",
+        }
+      }
+    />
+    <PricingButton
+      color="#2089dc"
+      disabled={true}
+      icon={
+        Object {
+          "color": "red",
+          "name": "flight-takeoff",
+          "size": 30,
+        }
+      }
+      title="GET STARTED"
+    />
+  </View>
+</View>
+`;
+
 exports[`PricingCard component should apply values from theme 1`] = `
 <View
   replaceTheme={[Function]}
   style={
     Object {
-      "backgroundColor": "white",
+      "backgroundColor": "#ffffff",
       "borderColor": "#e1e8ee",
       "borderWidth": 1,
       "margin": 15,
@@ -33,103 +216,24 @@ exports[`PricingCard component should apply values from theme 1`] = `
       style={
         Object {
           "color": "#2089dc",
-          "fontSize": 37.5,
+          "fontSize": 38.57142857142857,
           "fontWeight": "800",
           "textAlign": "center",
         }
       }
       testID="pricingCardTitle"
-      theme={
-        Object {
-          "PricingCard": Object {
-            "title": "ALL YOU CAN EAT",
-          },
-          "colors": Object {
-            "disabled": "hsl(208, 8%, 90%)",
-            "divider": "#bcbbc1",
-            "error": "#ff190c",
-            "grey0": "#393e42",
-            "grey1": "#43484d",
-            "grey2": "#5e6977",
-            "grey3": "#86939e",
-            "grey4": "#bdc6cf",
-            "grey5": "#e1e8ee",
-            "greyOutline": "#bbb",
-            "platform": Object {
-              "android": Object {
-                "error": "#f44336",
-                "primary": "#2196f3",
-                "secondary": "#9C27B0",
-                "success": "#4caf50",
-                "warning": "#ffeb3b",
-              },
-              "ios": Object {
-                "error": "#ff3b30",
-                "primary": "#007aff",
-                "secondary": "#5856d6",
-                "success": "#4cd964",
-                "warning": "#ffcc00",
-              },
-            },
-            "primary": "#2089dc",
-            "searchBg": "#303337",
-            "secondary": "#8F0CE8",
-            "success": "#52c41a",
-            "warning": "#faad14",
-          },
-        }
-      }
     >
       ALL YOU CAN EAT
     </Text>
     <Text
       style={
         Object {
-          "fontSize": 50,
+          "color": "#242424",
+          "fontSize": 51.42857142857143,
           "fontWeight": "700",
           "marginBottom": 10,
           "marginTop": 10,
           "textAlign": "center",
-        }
-      }
-      theme={
-        Object {
-          "PricingCard": Object {
-            "title": "ALL YOU CAN EAT",
-          },
-          "colors": Object {
-            "disabled": "hsl(208, 8%, 90%)",
-            "divider": "#bcbbc1",
-            "error": "#ff190c",
-            "grey0": "#393e42",
-            "grey1": "#43484d",
-            "grey2": "#5e6977",
-            "grey3": "#86939e",
-            "grey4": "#bdc6cf",
-            "grey5": "#e1e8ee",
-            "greyOutline": "#bbb",
-            "platform": Object {
-              "android": Object {
-                "error": "#f44336",
-                "primary": "#2196f3",
-                "secondary": "#9C27B0",
-                "success": "#4caf50",
-                "warning": "#ffeb3b",
-              },
-              "ios": Object {
-                "error": "#ff3b30",
-                "primary": "#007aff",
-                "secondary": "#5856d6",
-                "success": "#4cd964",
-                "warning": "#ffcc00",
-              },
-            },
-            "primary": "#2089dc",
-            "searchBg": "#303337",
-            "secondary": "#8F0CE8",
-            "success": "#52c41a",
-            "warning": "#faad14",
-          },
         }
       }
     >
@@ -145,46 +249,6 @@ exports[`PricingCard component should apply values from theme 1`] = `
           "textAlign": "center",
         }
       }
-      theme={
-        Object {
-          "PricingCard": Object {
-            "title": "ALL YOU CAN EAT",
-          },
-          "colors": Object {
-            "disabled": "hsl(208, 8%, 90%)",
-            "divider": "#bcbbc1",
-            "error": "#ff190c",
-            "grey0": "#393e42",
-            "grey1": "#43484d",
-            "grey2": "#5e6977",
-            "grey3": "#86939e",
-            "grey4": "#bdc6cf",
-            "grey5": "#e1e8ee",
-            "greyOutline": "#bbb",
-            "platform": Object {
-              "android": Object {
-                "error": "#f44336",
-                "primary": "#2196f3",
-                "secondary": "#9C27B0",
-                "success": "#4caf50",
-                "warning": "#ffeb3b",
-              },
-              "ios": Object {
-                "error": "#ff3b30",
-                "primary": "#007aff",
-                "secondary": "#5856d6",
-                "success": "#4cd964",
-                "warning": "#ffcc00",
-              },
-            },
-            "primary": "#2089dc",
-            "searchBg": "#303337",
-            "secondary": "#8F0CE8",
-            "success": "#52c41a",
-            "warning": "#faad14",
-          },
-        }
-      }
     >
       1 User
     </Text>
@@ -196,46 +260,6 @@ exports[`PricingCard component should apply values from theme 1`] = `
           "marginBottom": 5,
           "marginTop": 5,
           "textAlign": "center",
-        }
-      }
-      theme={
-        Object {
-          "PricingCard": Object {
-            "title": "ALL YOU CAN EAT",
-          },
-          "colors": Object {
-            "disabled": "hsl(208, 8%, 90%)",
-            "divider": "#bcbbc1",
-            "error": "#ff190c",
-            "grey0": "#393e42",
-            "grey1": "#43484d",
-            "grey2": "#5e6977",
-            "grey3": "#86939e",
-            "grey4": "#bdc6cf",
-            "grey5": "#e1e8ee",
-            "greyOutline": "#bbb",
-            "platform": Object {
-              "android": Object {
-                "error": "#f44336",
-                "primary": "#2196f3",
-                "secondary": "#9C27B0",
-                "success": "#4caf50",
-                "warning": "#ffeb3b",
-              },
-              "ios": Object {
-                "error": "#ff3b30",
-                "primary": "#007aff",
-                "secondary": "#5856d6",
-                "success": "#4cd964",
-                "warning": "#ffcc00",
-              },
-            },
-            "primary": "#2089dc",
-            "searchBg": "#303337",
-            "secondary": "#8F0CE8",
-            "success": "#52c41a",
-            "warning": "#faad14",
-          },
         }
       }
     >
@@ -251,46 +275,6 @@ exports[`PricingCard component should apply values from theme 1`] = `
           "textAlign": "center",
         }
       }
-      theme={
-        Object {
-          "PricingCard": Object {
-            "title": "ALL YOU CAN EAT",
-          },
-          "colors": Object {
-            "disabled": "hsl(208, 8%, 90%)",
-            "divider": "#bcbbc1",
-            "error": "#ff190c",
-            "grey0": "#393e42",
-            "grey1": "#43484d",
-            "grey2": "#5e6977",
-            "grey3": "#86939e",
-            "grey4": "#bdc6cf",
-            "grey5": "#e1e8ee",
-            "greyOutline": "#bbb",
-            "platform": Object {
-              "android": Object {
-                "error": "#f44336",
-                "primary": "#2196f3",
-                "secondary": "#9C27B0",
-                "success": "#4caf50",
-                "warning": "#ffeb3b",
-              },
-              "ios": Object {
-                "error": "#ff3b30",
-                "primary": "#007aff",
-                "secondary": "#5856d6",
-                "success": "#4cd964",
-                "warning": "#ffcc00",
-              },
-            },
-            "primary": "#2089dc",
-            "searchBg": "#303337",
-            "secondary": "#8F0CE8",
-            "success": "#52c41a",
-            "warning": "#faad14",
-          },
-        }
-      }
     >
       All Core Features
     </Text>
@@ -304,9 +288,15 @@ exports[`PricingCard component should apply values from theme 1`] = `
     >
       <View
         accessibilityRole="button"
-        accessibilityStates={Array []}
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": false,
+          }
+        }
         accessible={true}
-        isTVSelectable={true}
+        focusable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -344,46 +334,6 @@ exports[`PricingCard component should apply values from theme 1`] = `
           >
             <View
               replaceTheme={[Function]}
-              theme={
-                Object {
-                  "PricingCard": Object {
-                    "title": "ALL YOU CAN EAT",
-                  },
-                  "colors": Object {
-                    "disabled": "hsl(208, 8%, 90%)",
-                    "divider": "#bcbbc1",
-                    "error": "#ff190c",
-                    "grey0": "#393e42",
-                    "grey1": "#43484d",
-                    "grey2": "#5e6977",
-                    "grey3": "#86939e",
-                    "grey4": "#bdc6cf",
-                    "grey5": "#e1e8ee",
-                    "greyOutline": "#bbb",
-                    "platform": Object {
-                      "android": Object {
-                        "error": "#f44336",
-                        "primary": "#2196f3",
-                        "secondary": "#9C27B0",
-                        "success": "#4caf50",
-                        "warning": "#ffeb3b",
-                      },
-                      "ios": Object {
-                        "error": "#ff3b30",
-                        "primary": "#007aff",
-                        "secondary": "#5856d6",
-                        "success": "#4cd964",
-                        "warning": "#ffcc00",
-                      },
-                    },
-                    "primary": "#2089dc",
-                    "searchBg": "#303337",
-                    "secondary": "#8F0CE8",
-                    "success": "#52c41a",
-                    "warning": "#faad14",
-                  },
-                }
-              }
               updateTheme={[Function]}
             >
               <View
@@ -397,8 +347,6 @@ exports[`PricingCard component should apply values from theme 1`] = `
               >
                 <Text
                   allowFontScaling={false}
-                  brand={false}
-                  solid={false}
                   style={
                     Array [
                       Object {
@@ -428,8 +376,7 @@ exports[`PricingCard component should apply values from theme 1`] = `
               Object {
                 "color": "white",
                 "fontSize": 18,
-                "paddingBottom": 1,
-                "paddingTop": 2,
+                "paddingVertical": 1,
                 "textAlign": "center",
               }
             }
@@ -447,7 +394,7 @@ exports[`PricingCard component should render titleStyle 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "white",
+      "backgroundColor": "#ffffff",
       "borderColor": "#e1e8ee",
       "borderWidth": 1,
       "margin": 15,
@@ -474,7 +421,7 @@ exports[`PricingCard component should render titleStyle 1`] = `
       style={
         Object {
           "color": "#2089dc",
-          "fontSize": 37.5,
+          "fontSize": 38.57142857142857,
           "fontWeight": "800",
           "textAlign": "center",
         }
@@ -484,7 +431,7 @@ exports[`PricingCard component should render titleStyle 1`] = `
     <Themed.Text
       style={
         Object {
-          "fontSize": 50,
+          "fontSize": 51.42857142857143,
           "fontWeight": "700",
           "marginBottom": 10,
           "marginTop": 10,
@@ -534,21 +481,9 @@ exports[`PricingCard component should render titleStyle 1`] = `
     >
       All Core Features
     </Themed.Text>
-    <ForwardRef(Themed.Button)
-      buttonStyle={
-        Object {
-          "backgroundColor": "#2089dc",
-          "marginBottom": 10,
-          "marginTop": 15,
-        }
-      }
-      icon={
-        <Themed.Icon
-          color="white"
-          name="flight-takeoff"
-          size={15}
-        />
-      }
+    <PricingButton
+      color="#2089dc"
+      icon="flight-takeoff"
       title="GET STARTED"
       titleStyle={
         Object {
@@ -592,7 +527,7 @@ exports[`PricingCard component should render with props 1`] = `
         Object {
           "color": "#2089dc",
           "fontFamily": "arial",
-          "fontSize": 37.5,
+          "fontSize": 38.57142857142857,
           "fontWeight": "800",
           "textAlign": "center",
         }
@@ -605,7 +540,7 @@ exports[`PricingCard component should render with props 1`] = `
       style={
         Object {
           "fontFamily": "arial",
-          "fontSize": 50,
+          "fontSize": 51.42857142857143,
           "fontWeight": "700",
           "marginBottom": 10,
           "marginTop": 10,
@@ -660,21 +595,9 @@ exports[`PricingCard component should render with props 1`] = `
     >
       All Core Features
     </Themed.Text>
-    <ForwardRef(Themed.Button)
-      buttonStyle={
-        Object {
-          "backgroundColor": "#2089dc",
-          "marginBottom": 10,
-          "marginTop": 15,
-        }
-      }
-      icon={
-        <Themed.Icon
-          color="white"
-          name="flight-takeoff"
-          size={15}
-        />
-      }
+    <PricingButton
+      color="#2089dc"
+      icon="flight-takeoff"
       title="GET STARTED"
     />
   </View>
@@ -685,7 +608,7 @@ exports[`PricingCard component should render without info 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "white",
+      "backgroundColor": "#ffffff",
       "borderColor": "#e1e8ee",
       "borderWidth": 1,
       "margin": 15,
@@ -712,7 +635,7 @@ exports[`PricingCard component should render without info 1`] = `
       style={
         Object {
           "color": "#2089dc",
-          "fontSize": 37.5,
+          "fontSize": 38.57142857142857,
           "fontWeight": "800",
           "textAlign": "center",
         }
@@ -722,7 +645,7 @@ exports[`PricingCard component should render without info 1`] = `
     <Themed.Text
       style={
         Object {
-          "fontSize": 50,
+          "fontSize": 51.42857142857143,
           "fontWeight": "700",
           "marginBottom": 10,
           "marginTop": 10,
@@ -730,21 +653,9 @@ exports[`PricingCard component should render without info 1`] = `
         }
       }
     />
-    <ForwardRef(Themed.Button)
-      buttonStyle={
-        Object {
-          "backgroundColor": "#2089dc",
-          "marginBottom": 10,
-          "marginTop": 15,
-        }
-      }
-      icon={
-        <Themed.Icon
-          color="white"
-          name="flight-takeoff"
-          size={15}
-        />
-      }
+    <PricingButton
+      color="#2089dc"
+      icon="flight-takeoff"
       title="GET STARTED"
     />
   </View>
@@ -755,7 +666,7 @@ exports[`PricingCard component should render without issues 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "white",
+      "backgroundColor": "#ffffff",
       "borderColor": "#e1e8ee",
       "borderWidth": 1,
       "margin": 15,
@@ -782,7 +693,7 @@ exports[`PricingCard component should render without issues 1`] = `
       style={
         Object {
           "color": "#2089dc",
-          "fontSize": 37.5,
+          "fontSize": 38.57142857142857,
           "fontWeight": "800",
           "textAlign": "center",
         }
@@ -792,7 +703,7 @@ exports[`PricingCard component should render without issues 1`] = `
     <Themed.Text
       style={
         Object {
-          "fontSize": 50,
+          "fontSize": 51.42857142857143,
           "fontWeight": "700",
           "marginBottom": 10,
           "marginTop": 10,
@@ -842,21 +753,9 @@ exports[`PricingCard component should render without issues 1`] = `
     >
       All Core Features
     </Themed.Text>
-    <ForwardRef(Themed.Button)
-      buttonStyle={
-        Object {
-          "backgroundColor": "#2089dc",
-          "marginBottom": 10,
-          "marginTop": 15,
-        }
-      }
-      icon={
-        <Themed.Icon
-          color="white"
-          name="flight-takeoff"
-          size={15}
-        />
-      }
+    <PricingButton
+      color="#2089dc"
+      icon="flight-takeoff"
       title="GET STARTED"
     />
   </View>
