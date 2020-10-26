@@ -80,7 +80,7 @@ class Tooltip extends React.PureComponent {
     return {
       position: 'absolute',
       [I18nManager.isRTL ? 'right' : 'left']: x,
-      top: y,
+      top: y || 0,
       width,
       height,
       backgroundColor,
@@ -104,11 +104,11 @@ class Tooltip extends React.PureComponent {
       <View
         style={{
           position: 'absolute',
-          top: pastMiddleLine ? yOffset - 13 : yOffset + elementHeight - 2,
+          top: (pastMiddleLine ? yOffset - 13 : yOffset + elementHeight - 2) || 0,
           [I18nManager.isRTL ? 'right' : 'left']:
-            xOffset +
+            (xOffset +
             getElementVisibleWidth(elementWidth, xOffset, ScreenWidth) / 2 -
-            7.5,
+            7.5) || 0,
         }}
       >
         <Triangle
